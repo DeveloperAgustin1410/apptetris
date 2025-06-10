@@ -51,7 +51,33 @@ public class ahorcadoJuego extends javax.swing.JFrame {
         }
         txtintentos.setText("Intentos:"+intentos);
         txtletra.setText("");
+        dibujarCuerpo();
         revisarGanador();
+    }
+    
+    public void dibujarCuerpo(){
+      
+        if(intentos==1){
+        lazo.setVisible(true);
+        }
+        if(intentos==2){
+        cabeza.setVisible(true);
+        }
+        if(intentos==3){
+        cuerpo.setVisible(true);
+        }
+        if(intentos==4){
+        manoi.setVisible(true);
+        }
+        if(intentos==5){
+        manod.setVisible(true);
+        }
+        if(intentos==6){
+        piei.setVisible(true);
+        }
+        if(intentos==7){
+        pied.setVisible(true);
+        }
     }
     
     public void revisarGanador(){
@@ -64,10 +90,17 @@ for (JLabel letra : letras) {
         }
     }
         System.out.println(cadena);
-if (gano) {
+if (palabra.equals(cadena)&& intentos<7) {
     JOptionPane.showMessageDialog(this, "🎉 ¡Has ganado!");
    
     txtletra.setEnabled(false);  // O desactiva entrada
+    intentos=0;
+    txtintentos.setText("Intentos:"+intentos);
+}
+if(intentos>7){
+
+JOptionPane.showMessageDialog(this, "🎉 ¡Has perdido!");
+txtletra.setEnabled(false);
 }
 
     }
@@ -85,6 +118,9 @@ if (gano) {
         letra11.setText("_");
         letra12.setText("_");
         txtletra.setText("");
+        txtletra.setEnabled(true);
+        intentos=0;
+        txtintentos.setText("Intentos:"+intentos);
     }
 
     public void asignarPalabra() {
@@ -135,7 +171,8 @@ if (gano) {
         letras[9] = letra10;
         letras[10] = letra11;
         letras[11] = letra12;
-
+intentos=0;
+txtintentos.setText("Intentos:"+intentos);
     }
 
     /**
