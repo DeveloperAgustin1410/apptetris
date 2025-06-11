@@ -97,7 +97,7 @@ if (palabra.equals(cadena)&& intentos<7) {
     intentos=0;
     txtintentos.setText("Intentos:"+intentos);
 }
-if(intentos>7){
+if(intentos>=7){
 
 JOptionPane.showMessageDialog(this, "🎉 ¡Has perdido!");
 txtletra.setEnabled(false);
